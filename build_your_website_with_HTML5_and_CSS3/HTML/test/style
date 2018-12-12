@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Mentega';
+    src: url('Mentega.ttf');
+}
+
+@font-face {
+    font-family: 'BAD';
+    src: url('Bad_signal.otf');
+}
+
+h1 {
+	font-family: 'helvetica';
+}
+
+/*p {
+	font-family: New Time Roman;
+}*/

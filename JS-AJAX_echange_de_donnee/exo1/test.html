@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ajax</title>
+    <h1>Cérémonie des césars</h1>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+
+        // Affichage 
+        function display(sData)
+        {	
+            // Permet d'utiliser les données par la suite
+            var doc = sData.documentElement;
+            
+            var prix, nom, film;
+            // Récupère les valeurs d'éléments demandés
+            // not working yet, I want to get the id of the click input
+            var id = document.getElementsByClassName("inputClass")[0].id;
+
+            console.log(id);
+            if (id == "acteur"){
+                var prix = doc.getElementsByTagName('prix')[0];
+                var nom = doc.getElementsByTagName('nom')[0];
+                var film = doc.getElementsByTagName('film')[0];
+            } else if (id == "filmF"){
+                var prix = doc.getElementsByTagName('prix')[1];
+                var nom = doc.getElementsByTagName('nom')[1];
+                var film = doc.getElementsByTagName('film')[1];
+            } else if (id == "filmE"){
+                var prix = doc.getElementsByTagName('prix')[2];
+                var nom = doc.getElementsByTagName('nom')[2];
+                var film = doc.getElementsByTagName('film')[2];
+            }
+            
+            // Affichage
+            document.getElementById('Prix').innerHTML = prix.firstChild.nodeValue;
+            document.getElementById('Nom').innerHTML = nom.firstChild.nodeValue;
+            document.getElementById('Film').innerHTML = film.firstChild.nodeValue;
+        }
+
+        // Communication serveur
+        function request(appel) 
+        {
+            // TODO Ajax Request and call back
+            var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200 ) {
+					appel(xhr.responseXML);
+				}
+			};
+			xhr.open("GET", "cesar.xml", true);
+			xhr.send();
+        }
+
+    </script>
+</head>
+
+<body>
+	<div>
+	    <input class="inputClass" id="acteur" type="button" value="afficher le césar du meilleur acteur" 
+	    onclick="request(display)"/>
+	    <input class="inputClass" id="filmF" type="button" value="afficher le césar du meilleur film français" 
+	    onclick="request(display)"/>
+	    <input class="inputClass" id="filmE" type="button" value="afficher le césar du meilleur film étranger" 
+	    onclick="request(display)"/>
+    </div></br></br>
+	<div id="Prix"></div>
+	<div id="Nom"></div>
+	<div id="Film"></div>
+</body>
+</html>

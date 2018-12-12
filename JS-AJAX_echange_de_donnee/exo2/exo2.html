@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cities</title>
+    <script type="text/javascript">
+        // affichage
+        function display(sData){
+            var codeP = document.getElementById("codeP");
+            console.log(codeP.value);
+            
+            var jsonObj = JSON.parse(sData);
+            // put the list to zero
+            document.getElementById("Cities").innerHTML = "";
+			for (i = 0; i < jsonObj.length; i++) {
+				if (jsonObj[i]["zip"] === codeP.value) {
+					console.log(jsonObj[i]);
+					document.getElementById("Zip").innerHTML = codeP.value + " :";
+                    var node = document.createElement("LI");
+                    var textnote = document.createTextNode(jsonObj[i]["name"]);
+                    node.appendChild(textnote);
+					document.getElementById("Cities").appendChild(node);
+//                    document.getElementById("Cities").innerHTML += "<li>" + jsonObj[i]["name"] + "</li>"
+				}
+			}
+		}
+        
+        
+        // Communication serveur
+		function request(appel) {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+					appel(xhr.responseText);
+				}
+			};
+			xhr.open("GET", "cities.json", true);
+			xhr.send();
+		}
+    </script>
+</head>
+<body>
+    Code postal : <input type="text" id="codeP">
+	<input type="button" value="Submit" onclick="request(display)" /></br>
+	Resultat:
+    <list>
+        <p id="Zip"></p>
+        <ul id="Cities">
+        </ul>
+    </list>
+</body>
+</html>

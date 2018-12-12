@@ -1,0 +1,7 @@
+p {
+    height: 1em;
+    color: red;
+    border: 3px black solid;
+    height: auto; 
+    font-size: 15px;
+}
