@@ -12,12 +12,10 @@
     <!-- my CSS file -->
     <link rel="stylesheet" href="public/css/style.css">
 
-    <!--
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="public/js/translateJS.js"></script>
 
 </head>
 
@@ -27,8 +25,8 @@
 
     <div class="jumbotron">
         <div class="container text-center">
-            <h1>Online Store</h1>
-            <p>Change is the end result of all true learning.</p>
+            <h1>Application calcul de surface</h1>
+            <p></p>
         </div>
     </div>
 
@@ -43,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span class="navbar-brand"></span>
+                
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -53,34 +51,25 @@
                                 <?php 
                                 if($current == 'home'){
                                     echo '<input type="submit" class="navbutton active btn"
-                                      value="Catalog">';
+                                      value="Start">';
                                 } else{
                                     echo '<input type="submit" class="navbutton btn"
-                                      value="Catalog">';
+                                      value="Start">';
                                 }
                                 ?>
                             </div>
                         </form>
                     </li>
-
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navform navbar-form navbar-left" method="post">
                             <div class="form-group">
-                                <span class="glyphicon glyphicon-user"></span>
-                                <?php 
-                                if($current == 'account'){
-                                    echo '<input type="submit" class="navbutton active btn"
-                                        name="Pers_account" value="Personnal account">';
-                                } else {
-                                    echo '<input type="submit" class="navbutton btn"
-                                        name="Pers_account" value="Personnal account">';
-                                }
-                                ?>
+                                <button type="submit" name="Cancel" value="empty" 
+                        class="navbutton btn">Restart Calculation</button>
                             </div>
                         </form>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navform navbar-form navbar-left" method="post">
                             <div class="form-group">

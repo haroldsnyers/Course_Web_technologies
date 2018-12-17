@@ -48,7 +48,7 @@
                         <form method='post' class="formslt">
                             <input type='hidden' name='Selected' 
                             value="<?php echo $elem['Id']?>">
-                            <input class="selectpicker form-control form-control-sm" 
+                            <input type="number" class="selectpicker form-control form-control-sm" 
                             list="qty" onchange="this.form.submit()" name="qty" 
                             placeholder="<?php echo $quantity[$elem['Id']]?>">
                             <datalist id='qty'>

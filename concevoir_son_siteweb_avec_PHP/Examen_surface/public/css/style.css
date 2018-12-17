@@ -1,0 +1,50 @@
+/*----------Navbar----------*/
+
+.navbar-brand {
+    background-size: contain;
+    background-image: url("../images/learning-icon.png");
+    padding-left: 35px;
+}
+
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+    margin-bottom: 0;
+}
+
+/* navbarButton */
+.navbutton {
+    height: 50px;
+    margin-top: unset;
+    background: none;
+    color: #9d9d9d;
+    border-radius: unset;
+}
+
+.navform {
+    margin-bottom: unset;
+    margin-top: unset;
+    width: 100%;
+}
+
+/* navbarButton- */
+.active {
+    background-color: #1a1717;
+    color: white;
+}
+
+.navbutton:hover {
+    color: white;
+}
+
+
+/*-------CartView--------*/
+/*---pickerform---*/
+.selectpicker {
+    max-width: 80px;
+}
